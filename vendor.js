@@ -16,6 +16,7 @@ const houseParagraph = document.querySelector(".houseEasy");
 const statusEasy = document.querySelector(".statusEasy");
 const statusModeEasy = document.querySelector(".statusModeEasy");
 const playAgainEasy = document.querySelector(".playAgainEasyButton");
+const playAgain = document.querySelector(".playAgainEasyButton");
 const circle = document.querySelector(".circle");
 const level = document.querySelector(".levelMode");
 const easyMode = document.querySelector(".easyMode");
