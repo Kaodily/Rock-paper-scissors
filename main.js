@@ -150,7 +150,7 @@ function chooseImageEasy(e)  {
   stylesEasy(choice)
   setTimeout(() => {
   images.forEach((image) => {
-    image.removeEventListener("click", chooseImageEasy);
+  image.removeEventListener("click", chooseImageEasy);
 });
     computerOption()
     updateResult(choice)
