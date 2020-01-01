@@ -1,0 +1,19 @@
+const lizardImgHard = document.querySelector(".lizard-img-hard");
+const computerChoiceHard = document.querySelector(".paper-img-hard");
+const spockHard = document.querySelector(".spock-gradient-hard");
+const scissorsHard = document.querySelector(".scissors-gradient-hard");
+const rockHard = document.querySelector(".rock-gradient-hard");
+const paperHard= document.querySelector(".paper-gradient-hard");
+const statusHard = document.querySelector(".statusHard");
+const statusModeHard = document.querySelector(".statusModeHard");
+const lizardHard = document.querySelector(".lizard-gradient-hard");
+const myChoiceHard = document.querySelector(".spock-img-hard");
+const rockImgHard = document.querySelector(".rock-img-hard");
+const scissorsImgHard = document.querySelector(".scissors-img-hard");
+const imagesHard = document.querySelectorAll(".img-hard");
+const sectionHard = document.querySelector(".section-hard");
+const popupHard = document.querySelector(".popupHard");
+const choiceParagraphHard = document.querySelector(".choiceHard");
+const houseParagraphHard = document.querySelector(".houseHard");
+const playAgainHard = document.querySelector(".playAgainHardButton");
+

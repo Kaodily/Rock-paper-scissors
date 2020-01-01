@@ -4,79 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@600&family=Bellefair&family=Big+Shoulders+Display:wght@700&family=DM+Serif+Display&family=Epilogue:wght@500;700&family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Gideon+Roman&family=Inter:wght@400;700&family=Josefin+Sans:wght@300;400;600&family=Karla:wght@400;700&family=League+Spartan:wght@500;600;700&family=Lexend+Deca&family=Manrope&family=Overpass:wght@400;700&family=Poppins:wght@400;500;600;700&family=Red+Hat+Display:wght@500;700;900&family=Rubik:wght@400;500;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+      href="./images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@600&family=Bellefair&family=Big+Shoulders+Display:wght@700&family=DM+Serif+Display&family=Epilogue:wght@500;700&family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Gideon+Roman&family=Inter:wght@400;700&family=Josefin+Sans:wght@300;400;600&family=Karla:wght@400;700&family=League+Spartan:wght@500;600;700&family=Lexend+Deca&family=Manrope&family=Overpass:wght@400;700&family=Poppins:wght@400;500;600;700&family=Red+Hat+Display:wght@500;700;900&family=Rubik:wght@400;500;700&family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet" />
     <link rel="stylesheet" href="main.css" />
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
   </head>
   <body>
-      <header>
-        <div>
-          <img class="logo" src="./images/logo.svg" alt="" />
-        </div>
-        <div class="score">
-          <p>SCORE</p>
-          <h3 class="game_score">0</h3>
-        </div>
-      </header>
-      <div class="mode">
-        <p class="easylevel">Easy</p>
-
-        <div class="level">
-          <div class="circle">
-          </div>
-        </div>
-        <p class="hardlevel">Hard</p>
+    <header>
+      <div>
+        <img class="logo" src="./images/logo.svg" alt="" />
       </div>
-      <!-- Easy mode begins here -->
+      <div class="score">
+        <p>SCORE</p>
+        <h3 class="game_score">0</h3>
+      </div>
+    </header>
+    <div class="mode">
+      <p class="easylevel">Easy</p>
+
+      <div class="level">
+        <div class="circle"></div>
+      </div>
+      <p class="hardlevel">Hard</p>
+    </div>
+    <!-- Easy mode begins here -->
     <main class="easyMode">
       <section class="section">
         <div class="paper_scissors">
           <div>
-            <div class="paper-gradient">
-              <div>
-                <img
-                  id="paper-img"
-                  class="paper-img img"
-                  src="./images/icon-paper.svg"
-                  alt=""
-                />
-              </div>
+            <div class="paper-gradient container">
+              <img
+                id="paper-img"
+                class="paper-img img"
+                src="./images/icon-paper.svg"
+                alt="" />
             </div>
-            <p class="p_tag">You picked</p>
+            <p class="choiceEasy">You picked</p>
           </div>
           <div>
-            <div class="scissors-gradient">
-              <div>
-                <img
-                  id="scissors-img"
-                  class="scissors-img img"
-                  src="./images/icon-scissors.svg"
-                  alt=""
-                />
-              </div>
+            <div class="scissors-gradient container">
+              <img
+                id="scissors-img"
+                class="scissors-img img"
+                src="./images/icon-scissors.svg"
+                alt="" />
             </div>
             <div class="popup"></div>
-            <p class="house">The house picked</p>
+            <p class="houseEasy">The house picked</p>
           </div>
         </div>
-        <div class="rock-gradient">
-          <div>
-            <img
-              id="rock-img"
-              class="rock-img img"
-              src="./images/icon-rock.svg"
-              alt=""
-            />
-          </div>
+        <div class="rock-gradient container">
+          <img
+            id="rock-img"
+            class="rock-img img"
+            src="./images/icon-rock.svg"
+            alt="" />
         </div>
       </section>
       <div class="statusModeEasy">
@@ -95,55 +85,50 @@
               id="scissors-img"
               class="scissors-img-hard img-hard"
               src="./images/icon-scissors.svg"
-              alt=""
-            />
+              alt="" />
           </div>
         </div>
-       <div class="spock-paper">
-        <div class="spock-gradient-hard">
-          <div>
+        <div class="spock-paper">
+          <div class="spock-gradient-hard">
             <img
               id="spock-img"
               class="spock-img-hard img-hard"
               src="./images/icon-spock.svg"
-              alt=""
-            />
+              alt="" />
+          </div>
+          <!-- <p class="choiceHard">You picked</p> -->
+          <div class="paper-gradient-hard">
+            <div>
+              <img
+                id="paper-img"
+                class="paper-img-hard img-hard"
+                src="./images/icon-paper.svg"
+                alt="" />
+            </div>
+          </div>
+          <div class="popupHard"></div>
+          <!-- <p class="houseHard">The house picked</p> -->
+        </div>
+        <div class="lizard-rock">
+          <div class="lizard-gradient-hard">
+            <div>
+              <img
+                id="lizard-img"
+                class="lizard-img-hard img-hard"
+                src="./images/icon-lizard.svg"
+                alt="" />
+            </div>
+          </div>
+          <div class="rock-gradient-hard">
+            <div>
+              <img
+                id="rock-img"
+                class="rock-img-hard img-hard"
+                src="./images/icon-rock.svg"
+                alt="" />
+            </div>
           </div>
         </div>
-        <div class="paper-gradient-hard">
-          <div>
-            <img
-              id="paper-img"
-              class="paper-img-hard img-hard"
-              src="./images/icon-paper.svg"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="popupHard"></div>
-       </div>
-       <div class="lizard-rock">
-        <div class="lizard-gradient-hard">
-          <div>
-            <img
-              id="lizard-img"
-              class="lizard-img-hard img-hard"
-              src="./images/icon-lizard.svg"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="rock-gradient-hard">
-          <div>
-            <img
-              id="rock-img"
-              class="rock-img-hard img-hard"
-              src="./images/icon-rock.svg"
-              alt=""
-            />
-          </div>
-        </div>
-       </div>
       </section>
       <div class="statusModeHard">
         <h2 class="statusHard"></h2>
@@ -151,11 +136,10 @@
       </div>
     </main>
     <!-- Hard mode ends here -->
-    <div class="rules">
-      <button>
-      RULES
-    </button>
-  </div>
+    <div class="rules_container">
+      <button class="rules">RULES</button>
+    </div>
+
     <div class="modal">
       <h3>RULES</h3>
       <img class="rulesImage" src="./images/image-rules.svg" alt="" />
@@ -165,7 +149,9 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
-    <script src="vendor.js"></script>
+    <script src="easy.js"></script>
+    <script src="hard.js"></script>
     <script src="main.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
