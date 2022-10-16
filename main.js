@@ -28,12 +28,12 @@ images.forEach((image) => {
       console.log('hi')
       styled();
     } else if (paperImg.src.includes('rock')) {
-      paper.style.border = "10px solid hsl(349,71%,52%)";
+      paper.style.border = "10px solid hsl(349,71%, 52%)";
       console.log('hi')
 
       styled();
     } else {
-      paper.style.border = "10px solid  hsl(230,89%,62%)";
+      paper.style.border = "10px solid hsl(230,89%, 62%)";
       styled();
     }
     setTimeout(() => {
