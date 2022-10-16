@@ -64,7 +64,16 @@ section{
     color: white;
     text-transform: uppercase;
     margin-top: 20px;
-    display: none
+    display: none;
+    font-size: 12px;  
+
+}
+.house{
+    color: white;
+    text-transform: uppercase;
+    margin-top: 20px;
+    display: none;
+    font-size: 12px;  
 }
 .popup{
     width: 90px;
@@ -115,3 +124,51 @@ border-radius: 4px;
 padding-top: 8px;
 color: white;
 }
+.rotate-in-2-cw {
+	-webkit-animation: rotate-in-2-cw 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: rotate-in-2-cw 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+  @keyframes rotate-in-2-cw {
+    0% {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+      opacity: 1;
+    }
+  }
+  .fade-out {
+	        animation: fade-out 0.3s ease-out both;
+}
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .scale-in-center {
+	-webkit-animation: scale-in-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+  @keyframes scale-in-center {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  
