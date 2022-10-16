@@ -19,15 +19,15 @@ const arr = [
 images.forEach((image) => {
   const random = Math.floor(Math.random() * arr.length);
   image.addEventListener("click", () => {
-    console.log(image)
-    let source = '.' + image.src.slice(21)
+  
+    paperImg.src = image.src;
+    let source = '.' + paperImg.src.slice(21)
     console.log(source)
-    paperImg.src = source;
-    if (paperImg.src == "./images/icon-scissors.svg") {
+    if (source == "./images/icon-scissors.svg") {
          paper.style.border = "10px solid hsl(39, 89%, 49%)";
       styled();
       
-    } else if (paperImg.src == "./images/icon-rock.svg") {
+    } else if (source == "./images/icon-rock.svg") {
       paper.style.border = "10px solid hsl(349,71%,52%)";
       styled();
 
@@ -40,9 +40,10 @@ images.forEach((image) => {
             scissorsImg.src = arr[random];
             scissors.style.display = "flex";
             scissors.classList.add("scale-in-center");
-            if (scissorsImg.src == "./images/icon-scissors.svg") {
+            let source = '.' + scissorsImg.src.slice(21)
+            if (source == "./images/icon-scissors.svg") {
               scissors.style.border = "10px solid hsl(39, 89%, 49%)";
-            } else if (scissorsImg.src == "./images/icon-rock.svg") {
+            } else if (source == "./images/icon-rock.svg") {
               scissors.style.border = " 10px solid hsl(349, 71%, 52%)";
             } else {
               scissors.style.border = "10px solid  hsl(230, 89%, 62%)";
