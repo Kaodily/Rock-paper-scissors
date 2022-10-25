@@ -1,6 +1,6 @@
 const score = document.querySelector(".game_score");
-const paperImg = document.querySelector(".paper-img");
-const scissorsImg = document.querySelector(".scissors-img");
+const myChoice= document.querySelector(".paper-img");
+const computerChoice = document.querySelector(".scissors-img");
 const rockImg = document.querySelector(".rock-img");
 const paper = document.querySelector(".paper-gradient");
 const scissors = document.querySelector(".scissors-gradient");
@@ -10,49 +10,27 @@ const images = document.querySelectorAll(".img");
 const paragraph = document.querySelector(".p_tag");
 const paragraph2 = document.querySelector(".house");
 const popup = document.querySelector(".popup");
-const button = document.querySelector(".button");
+const button = document.querySelector(".rulesButton");
 const close = document.querySelector(".closed");
 const modal= document.querySelector(".modal");
+const statuss = document.querySelector(".status");
+const statusMode = document.querySelector(".statusMode");
+const playAgain = document.querySelector(".playAgainButton");
+
+
+
+
 const arr = [
   "./images/icon-scissors.svg",
   "./images/icon-paper.svg",
   "./images/icon-rock.svg",
 ];
+function random() {
+  return Math.floor(Math.random() * arr.length);
+}
 
 images.forEach((image) => {
-  const random = Math.floor(Math.random() * arr.length);
-  image.addEventListener("click", () => {
-    paperImg.src = image.src;
-    if (paperImg.src.includes('icon-scissors')) {
-      paper.style.border = "10px solid hsl(39, 89%, 49%)";
-      console.log('hi')
-      styled();
-    } else if (paperImg.src.includes('icon-rock')) {
-      paper.style.border = "10px solid hsl(349,71%, 52%)";
-      console.log('hi')
-
-      styled();
-    } else {
-      paper.style.border = "10px solid hsl(230,89%, 62%)";
-      styled();
-    }
-    setTimeout(() => {
-      popup.style.display = "none";
-      scissorsImg.src = arr[random];
-      scissors.style.display = "flex";
-      scissors.classList.add("scale-in-center");
-      if (scissorsImg.src.includes('icon-scissors')) {
-        scissors.style.border = "10px solid hsl(39, 89%, 49%)";
-      } else if (scissorsImg.src.includes('icon-rock')) {
-        scissors.style.border = " 10px solid hsl(349, 71%, 52%)";
-      } else {
-        scissors.style.border = "10px solid  hsl(230, 89%, 62%)";
-      }
-    }, 2000);
-  });
-  // setTimeout(() => {
-  //      image.removeEventListener('click', choose)
-  // },2000)
+  image.addEventListener("click",chooseImage )
 });
 
 function styled() {
@@ -62,7 +40,6 @@ function styled() {
   paragraph.style.display = "block";
   paragraph2.style.display = "block";
   popup.style.display = "block";
-  paper.classList.add("rotate-in-2-cw");
 }
 button.addEventListener('click', () => {
   modal.classList.add('scale-in-center')
@@ -73,3 +50,90 @@ button.addEventListener('click', () => {
 close.addEventListener('click', () => {
   modal.classList.add('scale-out-center')
 })
+
+playAgain.addEventListener('click', () => {
+  myChoice.src = "./images/icon-paper.svg"
+  section.style.backgroundImage = "block";
+  paragraph.style.display = "none";
+  paragraph2.style.display = "none";
+  paper.style.border = "10px solid hsl(230,89%, 62%)"
+  computerChoice.src = "./images/icon-scissors.svg"
+  scissors.style.border = "10px solid hsl(39, 89%, 49%)"
+  rock.classList.remove('fade-out')
+  section.classList.add('slide-in-right')
+  setTimeout(() => {
+    images.forEach((image) => {
+      image.addEventListener("click",chooseImage )
+    });
+})
+ statusMode.style.display ='none'
+ statusMode.classList.add('fade-out')
+ })
+function chooseImage(e) {
+  myChoice.src = e.target.src;
+  rock.classList.add('fade-out')
+  paper.classList.add("rotate-in-2-cw");
+    if (myChoice.src.includes('icon-scissors')) {
+      paper.style.border = "10px solid hsl(39, 89%, 49%)";
+      styled();
+    } else if (myChoice.src.includes('icon-rock')) {
+      paper.style.border = "10px solid hsl(349,71%, 52%)";
+      styled();
+    } else {
+      paper.style.border = "10px solid hsl(230,89%, 62%)";
+      styled();
+    }
+  setTimeout(() => {
+    images.forEach((image) => {
+      image.removeEventListener("click",chooseImage )
+    });
+      popup.style.display = "none";
+      computerChoice.src = arr[random()];
+      scissors.style.display = "flex";
+      scissors.classList.add("scale-in-center");
+      if (computerChoice.src.includes('icon-scissors')) {
+        scissors.style.border = "10px solid hsl(39, 89%, 49%)";
+        
+      } else if (computerChoice.src.includes('icon-rock')) {
+        scissors.style.border = " 10px solid hsl(349, 71%, 52%)";
+      } else {
+        scissors.style.border = "10px solid  hsl(230, 89%, 62%)";
+    }
+    if (myChoice.src.includes('icon-paper') &&
+      computerChoice.src.includes('icon-paper') || 
+      myChoice.src.includes('icon-scissors') &&
+      computerChoice.src.includes('icon-scissors') ||
+      myChoice.src.includes('icon-rock') &&
+      computerChoice.src.includes('icon-rock')) {
+        statusModes() 
+        statuss.textContent = 'DRAW'
+    } else if (myChoice.src.includes('icon-paper') &&
+      computerChoice.src.includes('icon-rock') ||
+      myChoice.src.includes('icon-rock') &&
+      computerChoice.src.includes('icon-scissors')||
+      myChoice.src.includes('icon-scissors') &&
+      computerChoice.src.includes('icon-paper')) {
+        statusModes() 
+        statuss.textContent = 'YOU WIN'
+      
+    }else if(myChoice.src.includes('icon-paper') &&
+      computerChoice.src.includes('icon-scissors') ||
+      myChoice.src.includes('icon-scissors') &&
+      computerChoice.src.includes('icon-rock') ||
+      myChoice.src.includes('icon-rock') &&
+      computerChoice.src.includes('icon-paper') 
+    ) {
+        statusModes() 
+        statuss.textContent = 'YOU LOSE'
+      
+    }
+    }, 2000);
+}
+function statusModes() {
+  statusMode.style.display ='block'
+  statusMode.classList.add('fade-in')
+}
+
+
+
+
