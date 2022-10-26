@@ -33,7 +33,7 @@ header .game_score{
 header img{
     width: 90px;
 }
-section{
+.section{
     background-image: url(./images/bg-triangle.svg);
     background-repeat: no-repeat;
     background-size: 200px;
@@ -132,7 +132,7 @@ section{
 .modal .rules{
   width: 250px;
   position: absolute;
-  top: 40%;
+  top: 35%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -149,7 +149,7 @@ section{
 
 }
 .status{
-  font-size: 60px;
+  font-size: 55px;
   text-transform: uppercase;
   color: white;
   letter-spacing: 3px;

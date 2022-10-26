@@ -50,24 +50,26 @@ button.addEventListener('click', () => {
 close.addEventListener('click', () => {
   modal.classList.add('scale-out-center')
 })
-
-playAgain.addEventListener('click', () => {
+function playAgainMode() {
   myChoice.src = "./images/icon-paper.svg"
-  section.style.backgroundImage = "block";
+  section.style.backgroundImage = "url(./images/bg-triangle.svg)";
   paragraph.style.display = "none";
   paragraph2.style.display = "none";
+  statusMode.style.display ='none'
   paper.style.border = "10px solid hsl(230,89%, 62%)"
   computerChoice.src = "./images/icon-scissors.svg"
   scissors.style.border = "10px solid hsl(39, 89%, 49%)"
   rock.classList.remove('fade-out')
-  section.classList.add('slide-in-right')
+}
+
+playAgain.addEventListener('click', () => {
+  playAgainMode()
   setTimeout(() => {
     images.forEach((image) => {
       image.addEventListener("click",chooseImage )
     });
 })
- statusMode.style.display ='none'
- statusMode.classList.add('fade-out')
+
  })
 function chooseImage(e) {
   myChoice.src = e.target.src;
@@ -114,7 +116,8 @@ function chooseImage(e) {
       myChoice.src.includes('icon-scissors') &&
       computerChoice.src.includes('icon-paper')) {
         statusModes() 
-        statuss.textContent = 'YOU WIN'
+      statuss.textContent = 'YOU WIN'
+      score.textContent = Number(score.textContent) + 1
       
     }else if(myChoice.src.includes('icon-paper') &&
       computerChoice.src.includes('icon-scissors') ||
@@ -124,11 +127,18 @@ function chooseImage(e) {
       computerChoice.src.includes('icon-paper') 
     ) {
         statusModes() 
-        statuss.textContent = 'YOU LOSE'
+      statuss.textContent = 'YOU LOSE'
+      score.textContent = score.textContent <=0 ? 0 :score.textContent - 1
+
+      
       
     }
-    }, 2000);
-}
+  }, 2000);
+
+
+} 
+
+
 function statusModes() {
   statusMode.style.display ='block'
   statusMode.classList.add('fade-in')
