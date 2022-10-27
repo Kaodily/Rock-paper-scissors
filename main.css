@@ -9,9 +9,9 @@ body{
     background-image: linear-gradient(-180deg,hsl(214, 47%, 23%),hsl(237, 49%, 15%));
     background-repeat: no-repeat;
     font-family: 'Barlow Condensed', sans-serif;
-}
-main{
   padding: 30px 25px;
+
+
 }
 header{
     display: flex;
@@ -33,6 +33,51 @@ header .game_score{
 header img{
     width: 90px;
 }
+.mode{
+display: flex;
+justify-content: flex-end;
+margin-top: 20px;
+gap: 5px;
+}
+
+.mode p{
+color:white;
+padding-top: 10px;
+}
+.level{
+  position: relative;
+  width: 70px;
+  height:35px;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+
+}
+.circle{
+  position: absolute;
+  top:5px;
+  left: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: hsl(237, 49%, 15%);
+  transition: 1s;
+
+}
+.active{
+  left: 40px;
+
+}
+.score{
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  text-align: center;
+  padding-top: 15px;
+  border-radius: 5px;
+}
 .section{
     background-image: url(./images/bg-triangle.svg);
     background-repeat: no-repeat;
@@ -40,33 +85,13 @@ header img{
     background-position: center;
     margin-top: 100px;
 }
-.score{
-    width: 80px;
-    height: 80px;
-    background-color: white;
-    border-radius: 3px;
-    text-align: center;
-    padding-top: 15px;
-    border-radius: 5px;
-}
-.paper-gradient{
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    border-radius: 50%;
-    border: 10px solid  hsl(230, 89%, 62%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -10px;
-    box-shadow: inset 3px 2px rgba(189, 189, 167, 0.515);
 
 
-}
 .p_tag{
     color: white;
     text-transform: uppercase;
     margin-top: 20px;
+    margin-left: 25px;
     display: none;
     font-size: 12px;  
 }
@@ -74,6 +99,7 @@ header img{
     color: white;
     text-transform: uppercase;
     margin-top: 20px;
+    margin-left: 10px;
     display: none;
     font-size: 12px;  
 }
@@ -81,8 +107,33 @@ header img{
     width: 90px;
     height: 90px;
     border-radius: 50%;
+    margin-top: -25px;
+    margin-bottom: 5px;
     background-color: hsl(237, 49%, 15%);
     display: none;
+}
+.popupHard{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-top: 60px;
+    margin-bottom: 5px;
+    background-color: hsl(237, 49%, 15%);
+    display: none;
+}
+.paper-gradient{
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  border: 10px solid  hsl(230, 89%, 62%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30px;
+  box-shadow: inset 3px 2px rgba(189, 189, 167, 0.515);
+
+
 }
 .scissors-gradient{
     width: 100px;
@@ -93,9 +144,10 @@ header img{
     display: flex;
     justify-content: center;
     align-items: center;
-     margin-top: -10px;
+     margin-top: -30px;
      box-shadow: inset 3px 2px rgba(189, 189, 167, 0.515);
 }
+
 .rock-gradient{
     width: 100px;
     height: 100px;
@@ -114,13 +166,14 @@ header img{
 }
 .paper_scissors{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 80px;
 }
 
 .modal{
   width: 100%;
   height: 100vh;
-  padding: 150px 10px;
+  padding: 100px 10px;
   background-color: white;
   position: absolute; 
   top: 0;
@@ -157,25 +210,123 @@ header img{
 .playAgainButton{
   width: 180px;
   height: 40px;
+  background-color: white;
+  color: hsl(237, 49%, 15%) ;
   border-radius: 5px;
   border : none;
+  font-family: 'Barlow Condensed', sans-serif;
+   font-weight: 500;
+   letter-spacing: 2px;
+   font-size: 13px;
   margin-top: 20px;
 }
-.rulesButton{
+.rules{
   text-align: center;
-  margin: 40px auto;
+}
+.rules button{
+  text-align: center;
+  margin: 90px auto;
   width: 100px;
   height: 40px;
   border: 2px solid white;
   border-radius: 4px;
-  padding-top: 9px;
+  padding-top: 3px;
   color: white;
+  background-color: inherit;
   font-family: 'Barlow Condensed', sans-serif;
   letter-spacing: 2px;
   }
+/* Hard level */
+.hardMode{
+  display: none;
+}
+.section-hard{
+  background-image: url(./images/bg-pentagon.svg);
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: center;
+  margin-top: 80px;
+  position: relative;
+}
 
+.paper-gradient-hard img,.scissors-gradient-hard img,.rock-gradient-hard img,.lizard-gradient-hard img,.spock-gradient-hard img{
+  width: 30px;
+}
+.lizard-gradient-hard{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    border: 10px solid   hsl(261, 73%, 60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     margin-top: 20px;
+     box-shadow: inset 3px 2px rgba(189, 189, 167, 0.515);
+}
+.scissors-gradient-hard{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    border: 10px solid  hsl(39, 89%, 49%) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     position: absolute;
+     left: 50%;
+     top: -30px;
+     transform: translateX(-50%);
+     box-shadow: inset 3px 2px rgba(189, 189, 167, 0.515);
+}
+.paper-gradient-hard{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    border: 10px solid  hsl(230, 89%, 62%) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+     box-shadow: inset 3px 2px rgba(189, 189, 167, 0.515);
+}
+.spock-gradient-hard{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    border: 10px solid  hsl(189, 59%, 53%) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+     box-shadow: inset 3px 2px rgba(189, 189, 167, 0.515);
+}
+.rock-gradient-hard{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    border: 10px solid  hsl(349, 71%, 52%) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     margin-top: 20px;
+     box-shadow: inset 3px 2px rgba(189, 189, 167, 0.515);
+}
+.spock-paper{
+  display: flex;
+  justify-content: center;
+ gap: 120px;
+}
+.lizard-rock{
+  display: flex;
+  justify-content: center;
+ gap: 50px;
+}
 
-
+/* animations  */
 .rotate-in-2-cw {
 	-webkit-animation: rotate-in-2-cw 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: rotate-in-2-cw 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -270,7 +421,75 @@ header img{
     opacity: 1;
   }
 }
+.slide-in-left {
+	-webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
 
 
+
+
+@media (min-width: 760px) {
+  header{
+   width: 500px;
+   border: 1px solid rgb(201, 200, 200);
+   height: 90px; 
+   margin-top: 100px;
+}
+.score{
+  width: 80px;
+  height: 60px;
+  background-color: white;
+  padding-top: 10px;
+}
+header p{
+  margin-bottom: -7px;
+}
+.paper_scissors{
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+.rules{
+ text-align: right;
+ margin-right: 20px;
+    }
+    .paper-gradient{
+      width: 130px;
+      height: 130px;
+      border: 15px solid  hsl(230, 89%, 62%);
+    
+    }
+    .scissors-gradient{
+        width: 130px;
+        height: 130px;
+        border: 15px solid  hsl(39, 89%, 49%) ;
+     
+    }
+    .rock-gradient{
+        width: 130px;
+        height: 130px;
+        border: 15px solid hsl(349, 71%, 52%);
+    }
+    .modal{
+      width: 400px;
+      height: 400px;
+     
+    }
+  
+
+}
   
   

@@ -18,7 +18,6 @@
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
   </head>
   <body>
-    <main>
       <header>
         <div>
           <img src="./images/logo.svg" alt="" />
@@ -28,6 +27,16 @@
           <h3 class="game_score">0</h3>
         </div>
       </header>
+      <div class="mode">
+        <p class="levelMode">Easy</p>
+
+        <div class="level">
+          <div class="circle">
+          </div>
+        </div>
+        <p class="levelMode">Hard</p>
+      </div>
+    <main class="easyMode">
       <section class="section">
         <div class="paper_scissors">
           <div>
@@ -73,9 +82,75 @@
         <h2 class="status"></h2>
         <button class="playAgainButton">PLAY AGAIN</button>
       </div>
-
-      <div class="rulesButton">RULES</div>
     </main>
+    <main class="hardMode">
+      <section class="section-hard">
+        <div class="scissors-gradient-hard">
+          <div>
+            <img
+              id="scissors-img"
+              class="scissors-img-hard img-hard"
+              src="./images/icon-scissors.svg"
+              alt=""
+            />
+          </div>
+        </div>
+       <div class="spock-paper">
+        <div class="spock-gradient-hard">
+          <div>
+            <img
+              id="spock-img"
+              class="spock-img-hard img-hard"
+              src="./images/icon-spock.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="paper-gradient-hard">
+          <div>
+            <img
+              id="paper-img"
+              class="paper-img-hard img-hard"
+              src="./images/icon-paper.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="popupHard"></div>
+       </div>
+       <div class="lizard-rock">
+        <div class="lizard-gradient-hard">
+          <div>
+            <img
+              id="lizard-img"
+              class="lizard-img-hard img-hard"
+              src="./images/icon-lizard.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="rock-gradient-hard">
+          <div>
+            <img
+              id="rock-img"
+              class="rock-img-hard img-hard"
+              src="./images/icon-rock.svg"
+              alt=""
+            />
+          </div>
+        </div>
+       </div>
+      </section>
+      <div class="statusMode">
+        <h2 class="status"></h2>
+        <button class="playAgainButton">PLAY AGAIN</button>
+      </div>
+    </main>
+    <div class="rules">
+      <button>
+      RULES
+    </button>
+  </div>
     <div class="modal">
       <h3>RULES</h3>
       <img class="rules" src="./images/image-rules.svg" alt="" />
