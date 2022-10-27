@@ -110,7 +110,7 @@ playAgain.addEventListener("click", () => {
   });
 });
 function chooseImageEasy(e) {
-  myChoiceHard.src = e.target.src;
+  myChoice.src = e.target.src;
   rock.classList.add("fade-out");
   if (myChoice.src.includes("icon-scissors")) {
     paper.style.border = "10px solid hsl(39, 89%, 49%)"
