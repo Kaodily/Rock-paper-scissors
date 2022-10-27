@@ -39,7 +39,12 @@ justify-content: flex-end;
 margin-top: 20px;
 gap: 5px;
 }
-
+.easylevel{
+  margin-right: 5px;
+}
+.hardlevel{
+  margin-right: 5px;
+}
 .mode p{
 color:white;
 padding-top: 10px;
@@ -183,7 +188,7 @@ padding-top: 10px;
 .modal h3{
   text-align: center;
 }
-.modal .rules{
+.modal .rulesImage{
   width: 250px;
   position: absolute;
   top: 35%;
@@ -463,32 +468,20 @@ header p{
   display: flex;
   justify-content: center;
   gap: 80px;
-}
+} 
 .rules{
  text-align: right;
  margin-right: 20px;
-    }
-    .paper-gradient{
-      width: 130px;
-      height: 130px;
-      border: 15px solid  hsl(230, 89%, 62%);
-    
-    }
-    .scissors-gradient{
-        width: 130px;
-        height: 130px;
-        border: 15px solid  hsl(39, 89%, 49%) ;
-     
-    }
-    .rock-gradient{
-        width: 130px;
-        height: 130px;
-        border: 15px solid hsl(349, 71%, 52%);
-    }
+    } 
+
     .modal{
+      padding: 20px 0;
       width: 400px;
       height: 400px;
      
+    }
+    .modal .rulesImage{
+      top: 25%;
     }
   
 

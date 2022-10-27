@@ -33,6 +33,7 @@ const easyMode = document.querySelector(".easyMode");
 const hardMode = document.querySelector(".hardMode");
 const imagesHard = document.querySelectorAll(".img-hard");
 const sectionHard = document.querySelector(".section-hard");
+const rulesImage = document.querySelector(".rulesImage");
 
 const arr = [
   "./images/icon-scissors.svg",
@@ -67,6 +68,15 @@ button.addEventListener("click", () => {
   modal.classList.add("scale-in-center");
   modal.classList.remove("scale-out-center");
   modal.style.display = "block";
+  if (circle.className.includes('active')) {
+    rulesImage.src = "./images/image-rules-bonus.svg"
+    
+
+  } else {
+    rulesImage.src = "./images/image-rules.svg"
+
+
+  }
 });
 close.addEventListener("click", () => {
   modal.classList.add("scale-out-center");
@@ -100,25 +110,16 @@ playAgain.addEventListener("click", () => {
   });
 });
 function chooseImageEasy(e) {
-  myChoice.src = e.target.src;
+  myChoiceHard.src = e.target.src;
   rock.classList.add("fade-out");
   if (myChoice.src.includes("icon-scissors")) {
-    paper.style.border =
-      window.innerWidth <= 760
-        ? "10px solid hsl(39, 89%, 49%)"
-        : "15px solid hsl(39, 89%, 49%)";
+    paper.style.border = "10px solid hsl(39, 89%, 49%)"
     styled();
   } else if (myChoice.src.includes("icon-rock")) {
-    paper.style.border =
-      window.innerWidth <= 760
-        ? "10px solid hsl(349,71%, 52%)"
-        : "15px solid hsl(349,71%, 52%)";
+    paper.style.border = "10px solid hsl(349,71%, 52%)"
     styled();
   } else {
-    paper.style.border =
-      window.innerWidth <= 760
-        ? "10px solid hsl(230,89%, 62%)"
-        : "15px solid hsl(230,89%, 62%)";
+    paper.style.border = "10px solid hsl(230,89%, 62%)"
     styled();
   }
   setTimeout(() => {
@@ -130,20 +131,11 @@ function chooseImageEasy(e) {
     scissors.style.display = "flex";
     scissors.classList.add("scale-in-center");
     if (computerChoice.src.includes("icon-scissors")) {
-      scissors.style.border =
-        window.innerWidth <= 760
-          ? "10px solid hsl(39, 89%, 49%)"
-          : "15px solid hsl(39, 89%, 49%)";
+      scissors.style.border =   "10px solid hsl(39, 89%, 49%)"
     } else if (computerChoice.src.includes("icon-rock")) {
-      scissors.style.border =
-        window.innerWidth <= 760
-          ? " 10px solid hsl(349, 71%, 52%)"
-          : "15px solid hsl(349, 71%, 52%)";
+      scissors.style.border =   " 10px solid hsl(349, 71%, 52%)"
     } else {
-      scissors.style.border =
-        window.innerWidth <= 760
-          ? "10px solid  hsl(230, 89%, 62%)"
-          : "15px solid  hsl(230, 89%, 62%)";
+      scissors.style.border =   "10px solid  hsl(230, 89%, 62%)"
     }
     if (
       (myChoice.src.includes("icon-paper") &&
@@ -210,34 +202,19 @@ function chooseImageHard(e) {
   myChoiceHard.src = e.target.src;
   // rock.classList.add("fade-out");
   if (myChoiceHard.src.includes("icon-scissors")) {
-    spockHard.style.border =
-      window.innerWidth <= 760
-        ? "10px solid hsl(39, 89%, 49%)"
-        : "15px solid hsl(39, 89%, 49%)";
+    spockHard.style.border = "10px solid hsl(39, 89%, 49%)"
     stylesHard();
   } else if (myChoiceHard.src.includes("icon-rock")) {
-    spockHard.style.border =
-      window.innerWidth <= 760
-        ? "10px solid hsl(349,71%, 52%)"
-        : "15px solid hsl(349,71%, 52%)";
+    spockHard.style.border = "10px solid hsl(349,71%, 52%)"
     stylesHard();
   } else if (myChoiceHard.src.includes("icon-spock")) {
-    spockHard.style.border =
-      window.innerWidth <= 760
-        ? "10px solid hsl(189, 59%, 53%)"
-        : "15px solid hsl(189, 59%, 53%)";
+    spockHard.style.border = "10px solid hsl(189, 59%, 53%)"
     stylesHard();
   } else if (myChoiceHard.src.includes("icon-lizard")) {
-    spockHard.style.border =
-      window.innerWidth <= 760
-        ? "10px solid hsl(261, 73%, 60%)"
-        : "15px solid hsl(261, 73%, 60%)";
+    spockHard.style.border = "10px solid hsl(261, 73%, 60%)"
     stylesHard();
   }else {
-    spockHard.style.border =
-      window.innerWidth <= 760
-        ? "10px solid hsl(230,89%, 62%)"
-        : "15px solid hsl(230,89%, 62%)";
+    spockHard.style.border = "10px solid hsl(230,89%, 62%)"
     stylesHard();
   }
   setTimeout(() => {
@@ -250,29 +227,21 @@ function chooseImageHard(e) {
     paperHard.classList.add("scale-in-center");
     if (computerChoiceHard.src.includes("icon-scissors")) {
       paperHard.style.border =
-        window.innerWidth <= 760
-          ? "10px solid hsl(39, 89%, 49%)"
-          : "15px solid hsl(39, 89%, 49%)";
+     
+          "10px solid hsl(39, 89%, 49%)"
     } else if (computerChoiceHard.src.includes("icon-rock")) {
       paperHard.style.border =
-        window.innerWidth <= 760
-          ? " 10px solid hsl(349, 71%, 52%)"
-          : "15px solid hsl(349, 71%, 52%)";
-    }else if (computerChoiceHard.src.includes("icon-paper")) {
+      
+          " 10px solid hsl(349, 71%, 52%)"
+    }else if (computerChoiceHard.src.includes("icon-spock")) {
       paperHard.style.border =
-        window.innerWidth <= 760
-          ? " 10px solid hsl(349, 71%, 52%)"
-          : "15px solid hsl(349, 71%, 52%)";
+        " 10px solid  hsl(189, 59%, 53%)"
     }else if (computerChoiceHard.src.includes("icon-lizard")) {
       paperHard.style.border =
-        window.innerWidth <= 760
-          ? " 10px solid hsl(349, 71%, 52%)"
-          : "15px solid hsl(349, 71%, 52%)";
+      " 10px solid hsl(261, 73%, 60%)"
     } else {
       paperHard.style.border =
-        window.innerWidth <= 760
-          ? "10px solid  hsl(230, 89%, 62%)"
-          : "15px solid  hsl(230, 89%, 62%)";
+           "10px solid hsl(230, 89%, 62%)"
     }
 
     if (
