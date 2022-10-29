@@ -1,69 +1,5 @@
-const score = document.querySelector(".game_score");
-const myChoice = document.querySelector(".paper-img");
-const computerChoice = document.querySelector(".scissors-img");
-const myChoiceHard = document.querySelector(".spock-img-hard");
-const rockImgHard = document.querySelector(".rock-img-hard");
-const scissorsImgHard = document.querySelector(".scissors-img-hard");
-const lizardImgHard = document.querySelector(".lizard-img-hard");
-const computerChoiceHard = document.querySelector(".paper-img-hard");
-const rockImg = document.querySelector(".rock-img");
-const paper = document.querySelector(".paper-gradient");
-const spockHard = document.querySelector(".spock-gradient-hard");
-const scissorsHard = document.querySelector(".scissors-gradient-hard");
-const rockHard = document.querySelector(".rock-gradient-hard");
-const paperHard= document.querySelector(".paper-gradient-hard");
-const lizardHard = document.querySelector(".lizard-gradient-hard");
-const scissors = document.querySelector(".scissors-gradient");
-const rock = document.querySelector(".rock-gradient");
-const section = document.querySelector(".section");
-const images = document.querySelectorAll(".img");
-const paragraph = document.querySelector(".p_tag");
-const paragraph2 = document.querySelector(".house");
-const popup = document.querySelector(".popup");
-const popupHard = document.querySelector(".popupHard");
-const button = document.querySelector(".rules");
-const close = document.querySelector(".closed");
-const modal = document.querySelector(".modal");
-const statuss = document.querySelector(".status");
-const statusMode = document.querySelector(".statusMode");
-const playAgain = document.querySelector(".playAgainButton");
-const circle = document.querySelector(".circle");
-const level = document.querySelector(".levelMode");
-const easyMode = document.querySelector(".easyMode");
-const hardMode = document.querySelector(".hardMode");
-const imagesHard = document.querySelectorAll(".img-hard");
-const sectionHard = document.querySelector(".section-hard");
-const rulesImage = document.querySelector(".rulesImage");
-
-const arr = [
-  "./images/icon-scissors.svg",
-  "./images/icon-paper.svg",
-  "./images/icon-rock.svg",
-];
-const arrHard = [
-  "./images/icon-scissors.svg",
-  "./images/icon-paper.svg",
-  "./images/icon-rock.svg",
-  "./images/icon-spock.svg",
-  "./images/icon-lizard.svg",
-];
-function random(id) {
-  return Math.floor(Math.random() * id.length);
-}
-
-images.forEach((image) => {
-  image.addEventListener("click", chooseImageEasy);
-});
-
-function styled() {
-  rock.classList.add("fade-out");
-  paper.classList.add("rotate-in-2-cw");
-  scissors.style.display = "none";
-  section.style.backgroundImage = "none";
-  paragraph.style.display = "block";
-  paragraph2.style.display = "block";
-  popup.style.display = "block";
-}
+// General functions
+// rules eventListener
 button.addEventListener("click", () => {
   modal.classList.add("scale-in-center");
   modal.classList.remove("scale-out-center");
@@ -74,34 +10,78 @@ button.addEventListener("click", () => {
 
   } else {
     rulesImage.src = "./images/image-rules.svg"
-
-
   }
 });
+// Generate random images
+function random(arr) {
+  return Math.floor(Math.random() * arr.length);
+}
+//eventlistener to close modal
 close.addEventListener("click", () => {
   modal.classList.add("scale-out-center");
 });
+
+//event listener to choose level
+circle.addEventListener("click", () => {
+  circle.classList.toggle("active");
+  score.textContent = 0
+  if (circle.className.includes('active')) {
+    easyMode.style.display = 'none'
+    hardMode.style.display = 'block'
+    hardMode.classList.add('slide-in-right')
+    logo.src = './images/logo-bonus.svg'
+
+  } else {
+    playAgainEasy
+    hardMode.style.display = 'none'
+    easyMode.style.display = 'block'
+    easyMode.classList.add('slide-in-right')
+    logo.src = "./images/logo.svg"
+
+  }
+});
+
+// General functions ends here
+
+
+
+// Easymode functions
+const arrEasy = [
+  "./images/icon-scissors.svg",
+  "./images/icon-paper.svg",
+  "./images/icon-rock.svg",
+];
+
+images.forEach((image) => {
+  image.addEventListener("click", chooseImageEasy);
+});
+
+function stylesEasy() {
+  rock.classList.add("fade-out");
+  paper.classList.add("rotate-in-2-cw");
+  scissors.style.display = "none";
+  section.style.backgroundImage = "none";
+  paragraph.style.display = "block";
+  paragraph2.style.display = "block";
+  popup.style.display = "block";
+}
+
+
 function playAgainMode() {
   myChoice.src = "./images/icon-paper.svg";
   section.style.backgroundImage = "url(./images/bg-triangle.svg)";
   paragraph.style.display = "none";
   paragraph2.style.display = "none";
-  statusMode.style.display = "none";
-  paper.style.border =
-    window.innerWidth <= 760
-      ? "10px solid hsl(230,89%, 62%)"
-      : "15px solid hsl(230,89%, 62%)";
+  statusModeEasy.style.display = "none";
+  paper.style.border = "10px solid hsl(230,89%, 62%)"
   computerChoice.src = "./images/icon-scissors.svg";
-  scissors.style.border =
-    window.innerWidth <= 760
-      ? "10px solid hsl(39, 89%, 49%)"
-      : "15px solid hsl(39, 89%, 49%)";
+  scissors.style.border = "10px solid hsl(39, 89%, 49%)"
   rock.classList.remove("fade-out");
   scissors.classList.remove("scale-in-center");
   paper.classList.remove("rotate-in-2-cw");
 }
 
-playAgain.addEventListener("click", () => {
+playAgainEasy.addEventListener("click", () => {
   playAgainMode();
   setTimeout(() => {
     images.forEach((image) => {
@@ -114,20 +94,20 @@ function chooseImageEasy(e) {
   rock.classList.add("fade-out");
   if (myChoice.src.includes("icon-scissors")) {
     paper.style.border = "10px solid hsl(39, 89%, 49%)"
-    styled();
+    stylesEasy();
   } else if (myChoice.src.includes("icon-rock")) {
     paper.style.border = "10px solid hsl(349,71%, 52%)"
-    styled();
+    stylesEasy();
   } else {
     paper.style.border = "10px solid hsl(230,89%, 62%)"
-    styled();
+    stylesEasy();
   }
   setTimeout(() => {
     images.forEach((image) => {
       image.removeEventListener("click", chooseImageEasy);
     });
     popup.style.display = "none";
-    computerChoice.src = arr[random(arr)];
+    computerChoice.src = arrEasy[random(arrEasy)];
     scissors.style.display = "flex";
     scissors.classList.add("scale-in-center");
     if (computerChoice.src.includes("icon-scissors")) {
@@ -146,7 +126,7 @@ function chooseImageEasy(e) {
         computerChoice.src.includes("icon-rock"))
     ) {
       statusModes();
-      statuss.textContent = "DRAW";
+      statusEasy.textContent = "DRAW";
     } else if (
       (myChoice.src.includes("icon-paper") &&
         computerChoice.src.includes("icon-rock")) ||
@@ -156,7 +136,7 @@ function chooseImageEasy(e) {
         computerChoice.src.includes("icon-paper"))
     ) {
       statusModes();
-      statuss.textContent = "YOU WIN";
+      statusEasy.textContent = "YOU WIN";
       score.textContent = Number(score.textContent) + 1;
     } else if (
       (myChoice.src.includes("icon-paper") &&
@@ -167,7 +147,7 @@ function chooseImageEasy(e) {
         computerChoice.src.includes("icon-paper"))
     ) {
       statusModes();
-      statuss.textContent = "YOU LOSE";
+      statusEasy.textContent = "YOU LOSE";
       score.textContent = score.textContent <= 0 ? 0 : score.textContent - 1;
     }
   }, 2000);
@@ -177,30 +157,23 @@ function statusModes() {
   statusMode.style.display = "block";
   statusMode.classList.add("fade-in");
 }
-circle.addEventListener("click", () => {
-  circle.classList.toggle("active");
-  if (circle.className.includes('active')) {
-    easyMode.style.display = 'none'
-    hardMode.style.display = 'block'
-    hardMode.classList.add('slide-in-right')
 
-  } else {
-    hardMode.style.display = 'none'
-    easyMode.style.display = 'block'
-    easyMode.classList.add('slide-in-right')
-
-  }
-});
 
 
 // HardMode functions
+const arrHard = [
+  "./images/icon-scissors.svg",
+  "./images/icon-paper.svg",
+  "./images/icon-rock.svg",
+  "./images/icon-spock.svg",
+  "./images/icon-lizard.svg",
+];
 imagesHard.forEach(image => {
   image.addEventListener('click', chooseImageHard)
 })
 
 function chooseImageHard(e) {
   myChoiceHard.src = e.target.src;
-  // rock.classList.add("fade-out");
   if (myChoiceHard.src.includes("icon-scissors")) {
     spockHard.style.border = "10px solid hsl(39, 89%, 49%)"
     stylesHard();
@@ -226,31 +199,26 @@ function chooseImageHard(e) {
     paperHard.style.display = "flex";
     paperHard.classList.add("scale-in-center");
     if (computerChoiceHard.src.includes("icon-scissors")) {
-      paperHard.style.border =
-     
-          "10px solid hsl(39, 89%, 49%)"
+      paperHard.style.border = "10px solid hsl(39, 89%, 49%)"
     } else if (computerChoiceHard.src.includes("icon-rock")) {
-      paperHard.style.border =
-      
-          " 10px solid hsl(349, 71%, 52%)"
+      paperHard.style.border = "10px solid hsl(349, 71%, 52%)"
     }else if (computerChoiceHard.src.includes("icon-spock")) {
-      paperHard.style.border =
-        " 10px solid  hsl(189, 59%, 53%)"
+      paperHard.style.border = "10px solid  hsl(189, 59%, 53%)"
     }else if (computerChoiceHard.src.includes("icon-lizard")) {
-      paperHard.style.border =
-      " 10px solid hsl(261, 73%, 60%)"
+      paperHard.style.border = "10px solid hsl(261, 73%, 60%)"
     } else {
-      paperHard.style.border =
-           "10px solid hsl(230, 89%, 62%)"
+      paperHard.style.border = "10px solid hsl(230, 89%, 62%)"
     }
 
     if (
-      (myChoice.src.includes("icon-paper") &&
-        computerChoice.src.includes("icon-paper")) ||
-      (myChoice.src.includes("icon-scissors") &&
-        computerChoice.src.includes("icon-scissors")) ||
-      (myChoice.src.includes("icon-rock") &&
-        computerChoice.src.includes("icon-rock"))
+      (myChoiceHard.src.includes("icon-paper") &&
+        computerChoiceHard.src.includes("icon-paper")) ||
+      (myChoiceHard.src.includes("icon-scissors") &&
+        computerChoiceHard.src.includes("icon-scissors")) ||
+      (myChoiceHard.src.includes("icon-rock") &&
+        computerChoiceHard.src.includes("icon-rock"))
+      (myChoiceHard.src.includes("icon-rock") &&
+        computerChoiceHard.src.includes("icon-rock"))
     ) {
       statusModes();
       statuss.textContent = "DRAW";
