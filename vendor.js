@@ -23,7 +23,7 @@ const easyMode = document.querySelector(".easyMode");
 const hardMode = document.querySelector(".hardMode");
 const rulesImage = document.querySelector(".rulesImage");
 const logo =  document.querySelector(".logo")
-
+const desktopDisplay = document.querySelector('.paper_scissors')
 
 
 // Hard
@@ -45,3 +45,4 @@ const popupHard = document.querySelector(".popupHard");
 const choiceParagraphHard = document.querySelector(".choiceHard");
 const houseParagraphHard = document.querySelector(".houseHard");
 const playAgainHard = document.querySelector(".playAgainHardButton");
+const desktopDisplayHard = document.querySelector('.spock-paper')

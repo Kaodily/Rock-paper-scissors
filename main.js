@@ -62,12 +62,12 @@ class UI {
   const option = this.getChoosenOption(chooseOption);
   if(choice === 'paper'){
     paper.style.border = option === 'scissors' 
-    ? "10px solid hsl(39, 89%, 49%)" : option === 'rock'
-    ? "10px solid hsl(349,71%, 52%)" : "10px solid hsl(230,89%, 62%)"
+    ? "12px solid hsl(39, 89%, 49%)" : option === 'rock'
+    ? "12px solid hsl(349,71%, 52%)" : "12px solid hsl(230,89%, 62%)"
   } else if(choice === 'scissors'){
        scissors.style.border = option === 'scissors' 
-    ? "10px solid hsl(39, 89%, 49%)" : option === 'rock'
-    ? "10px solid hsl(349,71%, 52%)" : "10px solid hsl(230,89%, 62%)"
+    ? "12px solid hsl(39, 89%, 49%)" : option === 'rock'
+    ? "12px solid hsl(349,71%, 52%)" : "12px solid hsl(230,89%, 62%)"
   }
   }
   stylesEasy(choosen) {
@@ -79,6 +79,7 @@ class UI {
     choiceParagraph.style.display = "block";
     houseParagraph.style.display = "block";
     popup.style.display = "block";
+    desktopDisplay.classList.add("gapped")
   }
   computerOption(){
     popup.style.display = "none";
@@ -118,13 +119,14 @@ class UI {
     choiceParagraph.style.display = "none";
     houseParagraph.style.display = "none";
     statusModeEasy.style.display = "none";
-    paper.style.border = "10px solid hsl(230,89%, 62%)"
-    scissors.style.border = "10px solid hsl(39, 89%, 49%)"
+    paper.style.border = "12px solid hsl(230,89%, 62%)"
+    scissors.style.border = "12px solid hsl(39, 89%, 49%)"
   }
   removeStyle(){
     rock.classList.remove("fade-out");
     scissors.classList.remove("scale-in-center");
     paper.classList.remove("rotate-in-2-cw");
+    desktopDisplay.classList.remove("gapped")
   }
   playAgain(){
     this.addStyle()
@@ -197,16 +199,16 @@ class UIHARD{
       const option = this.getChoosenOptionHard(chooseOption);
       if(choice === 'spock'){
         spockHard.style.border = option === 'scissors' 
-        ? "10px solid hsl(39, 89%, 49%)" : option === 'rock'
-        ? "10px solid hsl(349,71%, 52%)" : option === 'spock'
-        ? "10px solid  hsl(189, 59%, 53%)" : option === 'lizard'
-        ? "10px solid   hsl(261, 73%, 60%)" :"10px solid hsl(230,89%, 62%)"
+        ? "12px solid hsl(39, 89%, 49%)" : option === 'rock'
+        ? "12px solid hsl(349,71%, 52%)" : option === 'spock'
+        ? "12px solid  hsl(189, 59%, 53%)" : option === 'lizard'
+        ? "12px solid   hsl(261, 73%, 60%)" :"12px solid hsl(230,89%, 62%)"
       } else if(choice === 'paper'){
            paperHard.style.border = option === 'scissors' 
-        ? "10px solid hsl(39, 89%, 49%)" : option === 'rock'
-        ? "10px solid hsl(349,71%, 52%)" : option === 'spock'
-        ? "10px solid hsl(189, 59%, 53%)" : option === 'lizard'
-        ? "10px solid hsl(261, 73%, 60%)" : "10px solid hsl(230,89%, 62%)"
+        ? "12px solid hsl(39, 89%, 49%)" : option === 'rock'
+        ? "12px solid hsl(349,71%, 52%)" : option === 'spock'
+        ? "12px solid hsl(189, 59%, 53%)" : option === 'lizard'
+        ? "12px solid hsl(261, 73%, 60%)" : "12px solid hsl(230,89%, 62%)"
       }
       }
       stylesHard(choosen) {
@@ -218,6 +220,7 @@ class UIHARD{
           paperHard.style.display = "none";
           sectionHard.style.backgroundImage = "none";
           popupHard.style.display = "block";
+          desktopDisplayHard.classList.add("gapped_hard")
           // choiceParagraph.style.display = "block";
           // houseParagraph.style.display = "block";
         }
@@ -266,14 +269,15 @@ class UIHARD{
           // houseParagraph.style.display = "none";
           sectionHard.style.backgroundImage = "url(./images/bg-pentagon.svg)";
           statusModeHard.style.display = "none";
-          spockHard.style.border = "10px solid hsl(189, 59%, 53%)"
-          paperHard.style.border = "10px solid hsl(230,89%, 62%)"
+          spockHard.style.border = "12px solid hsl(189, 59%, 53%)"
+          paperHard.style.border = "12px solid hsl(230,89%, 62%)"
         }
         removeStyle(){
           scissorsHard.classList.remove("fade-out");
           lizardHard.classList.remove("fade-out");
           rockHard.classList.remove("fade-out");
           spockHard.classList.remove("rotate-in-2-cw");
+          desktopDisplayHard.classList.remove("gapped_hard")
         }
         playAgainHard(){
           this.addStyle()
