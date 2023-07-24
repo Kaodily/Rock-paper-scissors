@@ -6,7 +6,7 @@
 }
 body {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-image: linear-gradient(
     -180deg,
     hsl(214, 47%, 23%),
@@ -497,12 +497,6 @@ header img {
     height: 60px;
     font-size: 20px;
   }
-
-  /* .rules_container button{
-        width: 150px;
-        height: 60px;
-        border: 2px solid white;
-       } */
 }
 @media (min-width: 1023px) {
   body {
